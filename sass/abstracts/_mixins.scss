@@ -11,7 +11,7 @@
 }
 
 @mixin respond-phone {
-	@media (max-width: 23.4em) { //375px
+	@media (max-width: 37.5em) { //600px
 		@content
 	} 
 }
