@@ -14,20 +14,6 @@
 .u-margin-bottom {
   margin-bottom: 1.42rem; }
 
-/*body {
-	font-family: 'Raleway', sans-serif;
-	color: hsl(243, 100%, 93%);
-	font-weight: 400;
- 
-	box-sizing: border-box;
-	overflow-x: hidden;
-	background: hsl(229, 57%, 11%) url("../images/bg-desktop.png") left bottom no-repeat;
-	height: 100vh;
-	
-	@include respond-phone {
-		background: hsl(229, 57%, 11%) url("../images/bg-mobile.png");
-	}
-}*/
 .data {
   flex: 1;
   height: 14.3rem;
@@ -260,10 +246,10 @@ body {
   overflow-x: hidden;
   background: #0c122c url("../images/bg-desktop.png") left bottom no-repeat;
   height: 100vh; }
-  @media (max-width: 23.4em) {
+  @media (max-width: 37.5em) {
     body {
-      background: #0c122c url("../images/bg-mobile.png") top left no-repeat;
-      padding: 30px 10px 30px 20px; } }
+      background: #0c122c url("../images/bg-mobile.png") 100% 100% / 100% 100%;
+	  } }
 
 .container {
   max-width: 65.8rem;
