@@ -1,0 +1,291 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+.u-padding {
+  padding: 4.4%; }
+
+.u-border-radius {
+  border-radius: 10px; }
+
+.u-margin-bottom {
+  margin-bottom: 1.42rem; }
+
+/*body {
+	font-family: 'Raleway', sans-serif;
+	color: hsl(243, 100%, 93%);
+	font-weight: 400;
+ 
+	box-sizing: border-box;
+	overflow-x: hidden;
+	background: hsl(229, 57%, 11%) url("../images/bg-desktop.png") left bottom no-repeat;
+	height: 100vh;
+	
+	@include respond-phone {
+		background: hsl(229, 57%, 11%) url("../images/bg-mobile.png");
+	}
+}*/
+.data {
+  flex: 1;
+  height: 14.3rem;
+  margin-right: 1.4rem;
+  background: #1d2c67;
+  -webkit-clip-path: inset(0 0 0 0 round 3% 90px 3% 3%);
+  clip-path: inset(0 0 0 0 round 3% 90px 3% 3%);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start; }
+  .data-storage {
+    display: flex;
+    justify-content: space-between; }
+    .data-storage--file {
+      width: 3.57rem;
+      height: 3.57rem;
+      margin-right: 1.4rem;
+      background-color: #0c122c;
+      transition: all .2s;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .data-storage--file:last-child {
+        margin-right: 0; }
+      .data-storage--file svg {
+        fill: #697ED4; }
+      .data-storage--file:hover, .data-storage--file:active {
+        background-color: #848794;
+        cursor: pointer; }
+        .data-storage--file:hover svg, .data-storage--file:active svg {
+          fill: #0c122c; }
+  @media (max-width: 23.4em) {
+    .data {
+      margin-right: 0;
+      margin-bottom: 1.4rem;
+      padding: 12.2%;
+      flex: 0 0 14.3rem;
+      width: 100%; } }
+
+.data-remain {
+  width: 12.8rem;
+  height: 4.64rem;
+  padding-top: 1.14rem;
+  font-variant: small-caps;
+  font-weight: 700;
+  text-align: center;
+  color: #848794;
+  background-color: white;
+  position: absolute;
+  right: 5%;
+  top: 0px;
+  z-index: 100; }
+  .data-remain::after {
+    content: "";
+    display: table;
+    width: 12.48rem;
+    height: 4.64rem;
+    margin-top: -2.42rem;
+    margin-left: 5px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 75%, white 80%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 75%, 0 75%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 75%, 0 75%); }
+  .data-remain--left {
+    padding-right: 10px;
+    font-size: 2.14rem;
+    color: #0c122c; }
+  @media (max-width: 23.4em) {
+    .data-remain {
+      top: 69%;
+      right: 39%;
+      font-size: 1.3rem;
+      padding-top: .9rem; }
+      .data-remain::after {
+        display: none; }
+      .data-remain--left {
+        font-size: 2.4rem;
+        vertical-align: middle; } }
+
+/* DATA BAR WITHOUT ANIMATION
+
+.data-bar {
+	flex: 0 0 40%;
+	height: 11.4rem; //160px;
+	background: $color-primary;
+
+	-webkit-clip-path: inset(0 0 0 0 round 3% 3% 3% 3%);
+	clip-path: inset(0 0 0 0 round 3% 3% 3% 3%);
+	
+	&--usage {
+		font-weight: $weight-bold;
+	}
+
+	&__progress {
+		height: 1.42rem; //20px;
+		width: 32.8rem; //460px;
+		//width: 0;
+		margin: 0 auto;
+		background-color: lighten($color-primary-dark, 8%);
+		
+		display: flex; 
+    	align-items: center;
+    	padding-left: .1rem;
+
+    	//animation: Line linear 4s;
+
+    	&::before {
+    		@include span-content;
+			content: "0 GB";
+		} 
+
+		&::after {
+			@include span-content;
+			content: "1000 GB";
+			margin-left: 3.9rem; //55px; 
+		} 
+
+		&--show {
+			//width: 26.85rem; //350px;
+			height: 1.14rem; //16px;
+			margin-left: -1.85rem; //-26px;  
+			background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+			
+			display: flex; 
+			justify-content: center;
+			align-items: center;
+
+			animation: Line 3s ease-in;
+		}
+
+		&--pick {
+			display: block;
+			width: 12px;
+			height: 12px;
+			margin-left: 23.7rem; //333px; 
+			border-radius: 50%;
+			background-color: rgb(255, 255, 255);
+		}
+	}
+
+
+	@include respond-phone {
+		flex:0 0 11.4rem;
+
+		width: 100%;
+		padding: 12.2%;
+
+		p {
+			text-align: center;
+		}
+
+		&__progress {
+			width: 17.9rem;
+			padding-left: 0;
+
+			&::before {
+				@include span-content--mob;
+			}
+
+			&::after {
+				margin-left: 0;
+				@include span-content--mob;
+			}
+
+			&--show {
+				width: 15rem;
+				margin-left: -1.7rem;
+			}
+
+			&--pick {
+				margin-left: 13.8rem;
+			}
+		}
+	}
+}*/
+.data-bar {
+  flex: 0 0 40%;
+  height: 11.4rem;
+  background: #1d2c67;
+  -webkit-clip-path: inset(0 0 0 0 round 3% 3% 3% 3%);
+  clip-path: inset(0 0 0 0 round 3% 3% 3% 3%); }
+  .data-bar--usage {
+    font-weight: 700; }
+  .data-bar__progress {
+    height: 1.42rem;
+    width: 32.8rem;
+    margin: 0 auto;
+    background-color: #151f4c;
+    padding: 2px; }
+    .data-bar__progress--show {
+      width: 26.85rem;
+      height: 1.14rem;
+      padding: 2px;
+      background: linear-gradient(to right, #ffa399, #ff4d97);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      animation: Line 3s; }
+      .data-bar__progress--show::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: white; }
+  .data-bar__numb {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px; }
+    .data-bar__numb span {
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase; }
+
+@keyframes Line {
+  0% {
+    width: 0; } }
+
+html {
+  font-size: 87.5%; }
+  @media (max-width: 23.4em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #dddbff;
+  font-weight: 400;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: #0c122c url("../images/bg-desktop.png") left bottom no-repeat;
+  height: 100vh; }
+  @media (max-width: 23.4em) {
+    body {
+      background: #0c122c url("../images/bg-mobile.png") top left no-repeat;
+      padding: 30px 10px 30px 20px; } }
+
+.container {
+  max-width: 65.8rem;
+  transform: translate(28%, 50%);
+  display: flex;
+  align-items: flex-end; }
+  @media (max-width: 23.4em) {
+    .container {
+      width: 23.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      transform: initial; } }
+
+footer {
+  position: fixed;
+  bottom: 5%;
+  left: 40%; }
+  footer .attribution {
+    font-size: 11px;
+    text-align: center; }
+    footer .attribution a {
+      color: #3e52a3; }
+  @media (max-width: 23.4em) {
+    footer {
+      display: none; } }

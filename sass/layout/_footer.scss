@@ -1,0 +1,15 @@
+footer {
+	position: fixed;
+	bottom: 5%;
+	left: 40%;
+
+	.attribution {
+		 font-size: 11px; text-align: center;
+
+		 a { color: hsl(228, 45%, 44%); }
+	}
+
+	@include respond-phone {
+		display: none;
+	}
+}

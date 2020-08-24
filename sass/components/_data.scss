@@ -1,0 +1,58 @@
+.data {
+	flex: 1;
+	height: 14.3rem; 
+	margin-right: 1.4rem; 
+	background: $color-primary;
+	
+	-webkit-clip-path: inset(0 0 0 0 round 3% 90px 3% 3%);
+	clip-path: inset(0 0 0 0 round 3% 90px 3% 3%);
+
+	@include flex {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	&-storage {
+		@include flex;
+	
+		&--file {
+			width: 3.57rem; 
+			height: 3.57rem; 
+			margin-right: 1.4rem;  
+			background-color: $color-primary-dark;
+			transition: all .2s;
+			
+			display: flex;  
+			justify-content: center;
+			align-items: center;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			svg {
+				fill: #697ED4;
+			}
+
+	        &:hover,
+	        &:active {
+	        	background-color: $color-primary-light;
+	        	cursor: pointer;
+
+	        	svg {
+	        		fill: $color-primary-dark;
+	        	}
+	        } 
+    	}
+	}
+
+
+	@include respond-phone {
+		margin-right: 0;
+		margin-bottom: 1.4rem;
+		padding: 12.2%;
+
+		flex:0 0 14.3rem;
+		width: 100%;
+	}
+}

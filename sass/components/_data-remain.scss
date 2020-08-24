@@ -1,0 +1,49 @@
+.data-remain {
+	width: 12.8rem; 
+	height: 4.64rem; 
+	padding-top: 1.14rem; 
+	font-variant: small-caps;
+	font-weight: $weight-bold;
+	text-align: center;
+	color: $color-primary-light;  
+	background-color: rgb(255, 255, 255);
+	position: absolute;
+	right: 9%;
+	top: -35px;
+	
+	
+		&::after{
+			content: "";
+			display: table;
+			width: 12.47rem; 
+		    height: 4.64rem; 
+		    margin-top: -2.42rem; 
+		    margin-left: 5px;
+			background: linear-gradient(to bottom right, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 80%);
+			
+		    -webkit-clip-path:polygon(0 0, 100% 0, 100% 100%, 85% 75%, 0 75%);
+		    clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 75%, 0 75%);
+		}
+
+	&--left {
+		padding-right: 10px;  
+		font-size: 2.14rem; 
+		color: $color-primary-dark; 
+	}
+
+	@include respond-phone {
+		top: 91%;
+		right: 25%;
+		font-size: 1.3rem;
+		padding-top: .9rem;
+
+		&::after{
+			display: none;
+		}
+
+		&--left {
+			font-size: 2.4rem;
+			vertical-align: middle;
+		}
+	}
+}

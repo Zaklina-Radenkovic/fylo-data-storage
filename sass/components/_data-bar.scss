@@ -1,0 +1,94 @@
+.data-bar {
+	flex: 0 0 40%;
+	height: 11.4rem; 
+	background: $color-primary;
+	position: relative;
+	border-radius: 3%;
+
+	
+	&--usage {
+		font-weight: $weight-bold;
+	}
+
+	&__progress {
+		height: 1.42rem; 
+		width: 32.8rem; 
+		margin: 0 auto;
+		background-color: lighten($color-primary-dark, 8%);
+		padding: 2px;
+
+    	&--show {
+			width: 26.85rem; 
+			height: 1.14rem; 
+			padding: 2px;
+			background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+			
+			display: flex; 
+			justify-content: flex-end;
+			align-items: center;
+
+			animation: Line 3s;
+
+			&::after {
+				content: "";
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				background-color: rgb(255, 255, 255);
+			}
+		}
+	}
+
+	&__numb {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-top: 10px;
+
+		span {
+			font-size: .85rem;
+			font-weight: $weight-bold;
+			text-transform: uppercase;
+		}
+	}
+
+	@include respond-phone {
+		flex:0 0 11.4rem;
+
+		width: 100%;
+		padding: 12.2%;
+
+		p {
+			text-align: center;
+		}
+
+		&__progress {
+			width: 17.9rem;
+			padding-left: 0;
+
+			&::before {
+				@include span-content--mob;
+			}
+
+			&::after {
+				margin-left: 0;
+				@include span-content--mob;
+			}
+
+			&--show {
+				width: 15rem;
+				margin-left: -1.7rem;
+			}
+
+			&--pick {
+				margin-left: 13.8rem;
+			}
+		}
+	}
+}	
+
+@keyframes Line {
+	0% {
+		width: 0;
+	}
+}

@@ -1,0 +1,31 @@
+@mixin span-content {
+	font-size: .85rem;
+	font-weight: $weight-bold;
+	margin-top: 3.57rem;
+}
+
+@mixin flex { 
+	display: flex;
+	justify-content: space-between;
+	@content
+}
+
+@mixin respond-phone {
+	@media (max-width: 23.4em) { //375px
+		@content
+	} 
+}
+
+@mixin span-content--mob {
+	font-size: .7rem;
+}
+
+//RESPONSIVE
+
+@mixin respond ($breakpoint) {
+	@if $breakpoint == phone {
+		@media (max-width: 600px) {
+			@content
+		}
+	}
+}
